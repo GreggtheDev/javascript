@@ -2,7 +2,7 @@
 let shoppingList = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee'];
 
 // Add 'fruit loops' to the list
-shoppingList.push('froot loops');
+shoppingList.push('fruit loops');
 
 // Update 'coffee' to 'fair trade coffee'
 let index = shoppingList.indexOf('coffee');
@@ -24,10 +24,18 @@ if (salsaIndex !== -1) {
 // Create an empty array to represent your shopping cart called shoppingCart.
 let shoppingCart = [];
 
-// TODO: Call your shopping functions
+// Remove the last item from your shopping list and add it to your cart
+let lastItem = shoppingList.pop();
+shoppingCart.push(lastItem);
 
-// TODO: Print the results
+// Write a 'while' loop that takes items from your shopping list and moves them to your cart until there are no items left on the list.
+while (shoppingList.length > 0) {
+  let nextItem = shoppingList.shift();
+  shoppingCart.push(nextItem);
+}
 
-// TODO: Add any additional code or notes
+// Sort the items in the shopping cart in reverse alphabetical order
+shoppingCart.sort().reverse();
 
-// Happy shopping!
+// Print the shopping cart as a comma-separated string
+console.log(shoppingCart.join(', '));
