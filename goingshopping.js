@@ -10,7 +10,16 @@ if (index !== -1) {
   shoppingList[index] = 'fair trade coffee';
 }
 
-// TODO: Implement your shopping functions
+// eplace 'chips' and 'salsa' with 'rice' and 'beans'
+let chipsIndex = shoppingList.indexOf('chips');
+if (chipsIndex !== -1) {
+  shoppingList[chipsIndex] = 'rice';
+}
+
+let salsaIndex = shoppingList.indexOf('salsa');
+if (salsaIndex !== -1) {
+  shoppingList[salsaIndex] = 'beans';
+}
 
 // TODO: Test your shopping functions
 
