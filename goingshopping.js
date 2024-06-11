@@ -37,5 +37,5 @@ while (shoppingList.length > 0) {
 // Sort the items in the shopping cart in reverse alphabetical order
 shoppingCart.sort().reverse();
 
-// Print the shopping cart as a comma-separated string
+// Print the shopping cart as a comma-separated stringnode 
 console.log(shoppingCart.join(', '));
