@@ -10,7 +10,7 @@ if (index !== -1) {
   shoppingList[index] = 'fair trade coffee';
 }
 
-// eplace 'chips' and 'salsa' with 'rice' and 'beans'
+// Replace 'chips' and 'salsa' with 'rice' and 'beans'
 let chipsIndex = shoppingList.indexOf('chips');
 if (chipsIndex !== -1) {
   shoppingList[chipsIndex] = 'rice';
@@ -21,7 +21,8 @@ if (salsaIndex !== -1) {
   shoppingList[salsaIndex] = 'beans';
 }
 
-// TODO: Test your shopping functions
+// Create an empty array to represent your shopping cart called shoppingCart.
+let shoppingCart = [];
 
 // TODO: Call your shopping functions
 
