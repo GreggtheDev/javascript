@@ -1,162 +1,43 @@
-<<<<<<< HEAD
-const gmailData = {
-    mailboxes: {
-      inbox: [
-        {
-          from: 'angk@example.com',
-          to: 'me@example.com',
-          subject: 'Meeting Update',
-          body: 'The meeting has been rescheduled to 3 PM.',
-          date: new Date('2024-06-12T15:00:00')
-        },
-        {
-          from: 'csant@example.com',
-          to: 'me@example.com',
-          subject: 'Proposal',
-          body: 'Attached is a business proposal for your review.',
-          date: new Date('2024-06-13T10:00:00')
-        },
-        {
-          from: 'del@example.com',
-          to: 'me@example.com',
-          subject: 'Greetings!',
-          body: 'Wishing you a wonderful birthday!',
-          date: new Date('2024-06-14T00:00:00')
-        }
-      ],
-      junk: [],
-      sent: [],
-      drafts: []
-    },
-    contacts: {
-      Angela: 'angk@example.com',
-      Chris: 'csant@example.com',
-      Del: 'del@example.com',
-    }
-  };
-  
-  function getMailboxNames() {
-    return Object.keys(gmailData.mailboxes);
-  }
-  
-  function getEmailsFromMailbox(mailboxName) {
-    return gmailData.mailboxes[mailboxName] || [];
-  }
-  
-  function getSecondEmailText() {
-    return gmailData.mailboxes.inbox[1]?.body || 'No second email found.';
-  }
-  
-  function markEmailAsSent(emailIndex) {
-    if (emailIndex >= 0 && emailIndex < gmailData.mailboxes.inbox.length) {
-      const emailToSend = gmailData.mailboxes.inbox.splice(emailIndex, 1)[0];
-      gmailData.mailboxes.sent.push(emailToSend);
-    } else {
-      console.error('Invalid email index.');
-    }
-  }
-  
-  function addDraftEmail(draftEmail) {
-    if (draftEmail && draftEmail.from && draftEmail.to && draftEmail.subject && draftEmail.body) {
-      gmailData.mailboxes.drafts.push(draftEmail);
-    } else {
-      console.error('Invalid draft email details.');
-    }
-  }
-  
-  console.log('Mailbox Names:', getMailboxNames());
-  console.log('Inbox Emails:', getEmailsFromMailbox('inbox'));
-  console.log('Second Email Text:', getSecondEmailText());
-  
-  if (gmailData.mailboxes.inbox.length > 0) {
-    markEmailAsSent(0);
-  }
-  
-  addDraftEmail({
-    from: 'you@example.com',
-    to: 'recipient@example.com',
-    subject: 'Draft Email Subject',
-    body: 'This is a draft email.'
-  });
-=======
-const gmailData = {
-    mailboxes: {
-      inbox: [
-        {
-          from: 'angk@example.com',
-          to: 'me@example.com',
-          subject: 'Meeting Update',
-          body: 'The meeting has been rescheduled to 3 PM.',
-          date: new Date('2024-06-12T15:00:00')
-        },
-        {
-          from: 'csant@example.com',
-          to: 'me@example.com',
-          subject: 'Proposal',
-          body: 'Attached is a business proposal for your review.',
-          date: new Date('2024-06-13T10:00:00')
-        },
-        {
-          from: 'del@example.com',
-          to: 'me@example.com',
-          subject: 'Greetings!',
-          body: 'Wishing you a wonderful birthday!',
-          date: new Date('2024-06-14T00:00:00')
-        }
-      ],
-      junk: [],
-      sent: [],
-      drafts: []
-    },
-    contacts: {
-      Angela: 'angk@example.com',
-      Chris: 'csant@example.com',
-      Del: 'del@example.com',
-    }
-  };
-  
-  function getMailboxNames() {
-    return Object.keys(gmailData.mailboxes);
-  }
-  
-  function getEmailsFromMailbox(mailboxName) {
-    return gmailData.mailboxes[mailboxName] || [];
-  }
-  
-  function getSecondEmailText() {
-    return gmailData.mailboxes.inbox[1]?.body || 'No second email found.';
-  }
-  
-  function markEmailAsSent(emailIndex) {
-    if (emailIndex >= 0 && emailIndex < gmailData.mailboxes.inbox.length) {
-      const emailToSend = gmailData.mailboxes.inbox.splice(emailIndex, 1)[0];
-      gmailData.mailboxes.sent.push(emailToSend);
-    } else {
-      console.error('Invalid email index.');
-    }
-  }
-  
-  function addDraftEmail(draftEmail) {
-    if (draftEmail && draftEmail.from && draftEmail.to && draftEmail.subject && draftEmail.body) {
-      gmailData.mailboxes.drafts.push(draftEmail);
-    } else {
-      console.error('Invalid draft email details.');
-    }
-  }
-  
-  console.log('Mailbox Names:', getMailboxNames());
-  console.log('Inbox Emails:', getEmailsFromMailbox('inbox'));
-  console.log('Second Email Text:', getSecondEmailText());
-  
-  if (gmailData.mailboxes.inbox.length > 0) {
-    markEmailAsSent(0);
-  }
-  
-  addDraftEmail({
-    from: 'you@example.com',
-    to: 'recipient@example.com',
-    subject: 'Draft Email Subject',
-    body: 'This is a draft email.'
-  });
->>>>>>> 7589c91c2eea418a3670ad0d572a83bb8ef43428
-  // *all done* //
+// Declare an object to model the data of the Hotmail email application
+let appData = {
+    // The name of the email application
+    name: 'Hotmail',
+    // The name of the current user
+    user: 'John Doe',
+    // An array of the names of the mailboxes in the application
+    mailboxes: [
+        'inbox',
+        'junk',
+        'sent',
+        'drafts'
+    ],
+    // An array of contact objects, each with a name and the last message from that contact
+    contacts: [
+        {name: 'Alex', lastMessage: "See you at the meeting tomorrow"},
+        {name: 'Sam', lastMessage: "Happy Birthday!"}
+    ],
+    // An array of email objects, each representing an email with various properties
+    emails: [
+        {mailbox: 'inbox', from: 'Alex', subject: 'Meeting', text: 'See you at the meeting tomorrow', status: 'unread'},
+        {mailbox: 'sent', to: 'Sam', subject: 'Re: Birthday', text: 'Thank you!', status: 'sent'},
+        // etc...
+    ]
+}
+
+// Log the names of the mailboxes to the console
+console.log(appData.mailboxes);
+
+// Log the array of emails to the console
+console.log(appData.emails);
+
+// Log the text of the second email in the visible list to the console
+console.log(appData.emails[1].text);
+
+// Change the status of the first email to 'sent' and log the updated email to the console
+appData.emails[0].status = 'sent';
+console.log(appData.emails[0]);
+
+// Create a new draft email object, add it to the array of emails, and log the updated array to the console
+let draftEmail = {mailbox: 'drafts', to: 'Alex', subject: 'Draft', text: 'This is a draft email', status: 'draft'};
+appData.emails.push(draftEmail);
+console.log(appData.emails);
